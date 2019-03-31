@@ -1,0 +1,142 @@
+#+AUTHOR: Manoel Vlela
+#+TITLE: Chumbin: Um Sistema de Competição de Tiro
+#+DATE: <2019-03-31 Sun>
+#+OPTIONS: toc:nil
+
+#+BEGIN_ABSTRACT
+
+Um sistema ideal de competição de tiro ao alvo baseado nos fatores de
+competição, lucro e diversão.
+
+#+END_ABSTRACT
+
+* Motivação
+
+1. Lucrar;
+2. Diversão;
+3. Porque compramos recentemente uma carabina.
+
+* Sistema Econômico
+
+Existem duas entidades principais:
+
+1. Vale Chumbinho (VC)
+2. ChumbinhoCoin (CC)
+
+No caso do chumbinho coin existe as seguintes moedas:
+
++ 1 CC
++ 5 CC
++ 10 CC
++ 20 CC
++ 100 CC
+
+Além disso, há uma equivalência entre 1 VC e 20CC. No entanto para a
+troca acontecer é necessário obedecer uma regra:
+
+/Só será possível trocar 20CC por VC uma única vez a cada compra/
+
+
+* Modelo de Negócio e Lucro
+
+O esquema de lucro se baseia na premissa de que o preço de serviço
+para dar um tiro na barraca será de R$ 0.50. Uma caixa com 125
+chumbinhos custa R$ 10.00 na cidade Sobral. Uma carabina custa R$
+720.00 reais e deve ser levada em consideração dada a manuntenção do
+equipamento.
+
+O principal meio de negócio será prover um serviço ao povo local da
+rua, na qual eles poderão se divertir comprando fichas virtuais (VC)
+no valor de 50 centavos. A competição se baseia em alcançar o máximo
+possível de pontos a cada tiro.
+
+No fim da sessão o cliente poderá trocar seu total de pontos por uma
+premiação na tabela apresenta a seguir.
+
+* Sistema de Pontuação
+
+As pontuações são baseadas em quatro regiões circulares com as
+seguintes pontuações:
+
+1. 20
+2. 10
+3. 5
+4. 1
+
+#+ATTR_LATEX: :placement [H]
+#+CAPTION: Imagem simulando as quatro áreas circulares geradas no software GeoGebra.
+[[./pics/target.png]]
+
+* Sistema de Premiação
+
+| Pontuação | Prêmio            | Faixa de custo (R$) |
+|-----------+-------------------+---------------------|
+| 1 < x < 5 | Nova chance       | 0.08 ~ 0.10         |
+|         5 | Balinha           | 0.05 ~ 0.10         |
+|        20 | Pastilha/Pirulito | 0.30 ~ 0.50         |
+|        40 | Pipoca            | 0.50 ~ 0.70         |
+
+* Sistema de Níveis e Gamificação
+
+Foi modelado um sistema de níveis baseado em experiência. Ao mesmo
+tempo que você adquire pontuação com ChumbinhoCoin, será pontuado
+também a mesma quantidade em experiência.
+
+Essa experiência sempre será acumulada mesmo com a troca de
+prêmios. Ou seja, ela nunca decresce. A partir do acúmulo de
+experiência foram divídos alguns níveis de experiência, como é
+possível ver a seguir;
+
+
+| Level |  Exp |
+|-------+------|
+|     1 |    0 |
+|     2 |   50 |
+|     3 |  200 |
+|     4 |  500 |
+|     5 |  600 |
+|     6 |  780 |
+|     7 |  900 |
+|     8 | 1200 |
+|     9 | 1400 |
+|    10 | 1500 |
+
+
+
+* Uma resolução optimizada e automática para o sistema de níveis
+
+Regressão linear nos pontos de cortes citados na seção anterior:
+
+[[file:pics/normal.png]]
+
+#+BEGIN_latex latex
+\begin{equation}
+y(x) = 1.54  + 0.01 \cdot x
+\end{equation}
+#+END_latex
+
+Opcionalmente é possível traçar uma curva logarítmica entre (0, 1) e
+(10, 1500) para aumentar um pouco a dificuldade de alcançar novos
+níveis. A resolução no entanto não trouxe resultados muito atraentes
+devido a rápida ascenção dos níveis baixos, enquanto há uma enorme
+dificuldade apenas entre 9 e 10. Acredito que há como ajustar a curva
+de forma logarítmica para que seja otimizado a evolução com o aspecto
+de dificuldade crescente para evoluir.
+
+
+* O que você aprendeu hoje?
+
+  Luigi: Hoje eu aprendi sobre matemática, mas eu não só estudei, eu aprendi
+com o meu tio Manoel Vilela. Ele me ensinou como fazer lucro com uma
+arminha de chumbinho de pressão, ganhar dinheiro e eu pagar as contas
+da minha vó, mas também euu vou ajudar pagando água e energia.
+
+Diogo: Bom, eu aprendi coisas sobre o sistemas de níveis, como nível 1, 2
+, 3 e etc. Também viramos uma espécie de detetive, tinhamos que
+procurar o número k e f(xp) ótimo para que tívemos um nível qualquer
+pra qualquer xp.
+
+Manoel: Hoje eu aprendi que crianças possuem a capadidade de aprender
+maior do que eu esperava. Acredito eu que o maior diferencial é
+ensinar assuntos que estejam relacionados as coisas que elas gostam,
+se interessam, e portanto, desejam aprender!
