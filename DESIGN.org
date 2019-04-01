@@ -105,8 +105,16 @@ possível ver a seguir;
 
 * Uma resolução optimizada e automática para o sistema de níveis
 
-Regressão linear nos pontos de cortes citados na seção anterior:
+Existem dois modos de dificuldade planejada: normal e hard. No normal
+a dificuldade de upar de level é sempre na mesma aceleração, isto é, a
+dificuldade não aumenta agressivamente com o aumento de leveis. No
+modo hard, por outro lado, cada vez vai ficando muito mais difícil
+upar.
 
+As curvas características para os dois modos são, respectivamente, uma
+reta e uma curva logarítimica.
+
+#+CAPTION: Regressão linear sobre os valores sugeridos como (xp, lvl) anteriormente.
 [[file:pics/normal.png]]
 
 #+BEGIN_latex latex
@@ -123,6 +131,17 @@ dificuldade apenas entre 9 e 10. Acredito que há como ajustar a curva
 de forma logarítmica para que seja otimizado a evolução com o aspecto
 de dificuldade crescente para evoluir.
 
+#+CAPTION: Curva característica de uma evolução no modo hard.
+[[file:pics/hard.png]]
+
+#+BEGIN_latex latex
+\begin{equation}
+\begin{aligned}
+c &= -1.98 - 0.645i \\
+y( x ) &= \dfrac{ln(x + c)}{ln(c)}
+\end{aligned}
+\end{equation}
+#+END_latex
 
 * O que você aprendeu hoje?
 
