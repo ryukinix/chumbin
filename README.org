@@ -10,11 +10,29 @@ competição, lucro e diversão.
 
 #+END_ABSTRACT
 
+* Descrição
+
+Este sistema provê modelagens de um sistema de competição de tiros
+basedo em tiro-ao-alvo:
+
++ Sistema Econômico
++ Sistema de Pontuação
++ Sistema de Premiação
++ Sistema de Níveis
++ Possível Modelo de Negócios
++ Uma solução otimizada para a distribuição de níveis usando soluções
+  analíticas em matemática, métodos numéricos e aprendizagem simples
+  de máquina (regressão)
+
 * Motivação
 
-1. Lucrar;
+Além de ensinar um pouco meus dois sobrinhos Luigi (10 anos) e Diogo
+(12 anos) sobre como é possível a matemática ser divertido, a
+pretensão final é criar um sistema de competição de tiros com os
+seguintes princípios:
+
+1. Recompensa;
 2. Diversão;
-3. Porque compramos recentemente uma carabina.
 
 * Sistema Econômico
 
@@ -35,7 +53,6 @@ Além disso, há uma equivalência entre 1 VC e 20CC. No entanto para a
 troca acontecer é necessário obedecer uma regra:
 
 /Só será possível trocar 20CC por VC uma única vez a cada compra/
-
 
 * Modelo de Negócio e Lucro
 
