@@ -159,3 +159,7 @@ Manoel: Hoje eu aprendi que crianças possuem a capadidade de aprender
 maior do que eu esperava. Acredito eu que o maior diferencial é
 ensinar assuntos que estejam relacionados as coisas que elas gostam,
 se interessam, e portanto, desejam aprender!
+
+* Licença
+[[https://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons CC BY-NC-SA]]
+Manoel Vilela © 2019
